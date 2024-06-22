@@ -10,6 +10,7 @@ const favoritSubject=ref(database,"Accounts/Students")
 let UserId;
 
 document.getElementById("sherche").addEventListener("click",function() {
+    console.log("Hi")
     chereche()
 })
 
