@@ -60,7 +60,7 @@ function graph(UserAbil) {
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log(window.location.pathname)
-    if (window.location.pathname.includes("profile")) {
+    if (window.location.pathname.includes("Profile.html")) {
         onValue(student, function(snapshot) {
             const data = snapshot.val();
             console.log(data["Name"]);
