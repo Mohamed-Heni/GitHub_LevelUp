@@ -165,10 +165,18 @@ function basicData() {
 }
 
 function classid() {
-    
     let UserStorage = JSON.parse(localStorage.getItem("UserData"));
+    if (UserStorage==null) {
+        let newclassid=document.getElementById("majours").value + document.getElementById("year").value + document.getElementById("semester").value;
+        let newTopSubject =document.getElementById("subjects").value;
+        const user=localStorage.getItem("userid")
+        set(ref(database,`Accounts/Students/${user}/ClassId`),newclassid)
+        set(ref(database,`Accounts/Students/${user}/TopSubject`),newTopSubject)
+        window.location.href="./editegrades.html"
+    }else{
     UserStorage.TopSubject = document.getElementById("subjects").value;
     UserStorage.ClassId = document.getElementById("majours").value + document.getElementById("year").value + document.getElementById("semester").value;
     localStorage.setItem("UserData", JSON.stringify(UserStorage));
     window.location.href = "./4_interact(DataCollect1).html";
+    }
 }
