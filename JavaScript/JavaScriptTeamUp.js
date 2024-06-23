@@ -8,10 +8,8 @@ console.log(app)
 const database=getDatabase(app);
 const favoritSubject=ref(database,"Accounts/Students")
 let UserId;
-console.log("hi from the first");
 
 document.getElementById("sherche").addEventListener("click",function() {
-    console.log("Hi from the button");
     chereche()
 })
 
